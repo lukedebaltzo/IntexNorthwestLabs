@@ -10,7 +10,7 @@ namespace IntexNorthwestLabs.Models
     [Table("Location")]
     public class Location
     {
-
+        [Key]
         [Required]
         [Display(Name = "Location Code")]
         public int LocationCode { get; set; }

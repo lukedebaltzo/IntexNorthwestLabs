@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IntexNorthwestLabs.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,6 +11,7 @@ namespace IntexNorthwestLabs.Controllers
 {
     public class HomeController : Controller
     {
+        private NorthWestLabsContext db = new NorthWestLabsContext();
         // GET: Home
         public ActionResult Index()
         {
