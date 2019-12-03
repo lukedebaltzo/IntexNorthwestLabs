@@ -1,0 +1,49 @@
+﻿@model IntexNorthwestLabs.Models.Assay
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assay</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayLiteratureRefs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayLiteratureRefs)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to Catalog", "Catalog")
+</p>
