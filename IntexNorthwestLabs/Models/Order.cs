@@ -22,6 +22,7 @@ namespace IntexNorthwestLabs.Models
         public DateTime OrderDate { get; set; }
         
         [Required(ErrorMessage = "Please describe your order")]
+        [DataType(DataType.MultilineText)]
         [Display(Name = "Please note what assays you would like and the corresponding compounds. Please make a note if you would like all tests (required and conditional) for each assay requested.")]
         [StringLength(300, ErrorMessage = "Your response must be less than 300 characters")]
         public string OrderComment { get; set; }
@@ -31,6 +32,7 @@ namespace IntexNorthwestLabs.Models
         public bool OrderRushed { get; set; }
 
         [Required]
+        [DataType(DataType.Date)]
         [Display(Name = "When do you need this order by?")]
         public DateTime DueDate { get; set; }
         
