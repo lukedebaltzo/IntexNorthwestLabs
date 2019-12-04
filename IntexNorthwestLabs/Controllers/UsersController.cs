@@ -141,9 +141,9 @@ namespace IntexNorthwestLabs.Controllers
         {
             String userName = form["User Name"].ToString();
             String password = form["Password"].ToString();
-            var obj = db.User.FirstOrDefault(x => x.Username == userName);
-            String authUserName = obj.Username;
-            String authPassword = obj.Password;
+            var obj = db.User.FirstOrDefault(x => x.UserName == userName);
+            String authUserName = obj.UserName;
+            String authPassword = obj.UserPassword;
             
 
             if (string.Equals(userName, authUserName) && (string.Equals(password, authPassword)))
