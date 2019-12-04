@@ -128,11 +128,17 @@
     <Compile Include="Models\AssayTest.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Discount.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\InvoiceDetail.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Material.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderAssay.cs" />
     <Compile Include="Models\Quote.cs" />
+    <Compile Include="Models\QuoteDetail.cs" />
+    <Compile Include="Models\Test.cs" />
+    <Compile Include="Models\TestMaterial.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />

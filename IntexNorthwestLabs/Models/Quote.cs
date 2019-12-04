@@ -10,6 +10,7 @@ namespace IntexNorthwestLabs.Models
     [Table("Quote")]
     public class Quote
     {
+        [Key]
         [Display(Name = "Quote Code")]
         public int QuoteCode { get; set; }
 

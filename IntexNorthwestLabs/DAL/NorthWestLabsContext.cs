@@ -22,6 +22,8 @@ namespace IntexNorthwestLabs.DAL
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderAssay> OrderAssay { get; set; }
         public DbSet<User> User { get; set; }
+
+        public System.Data.Entity.DbSet<IntexNorthwestLabs.Models.Customer> Customers { get; set; }
     }
 }
 

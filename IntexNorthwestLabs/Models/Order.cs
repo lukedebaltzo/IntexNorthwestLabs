@@ -23,6 +23,7 @@ namespace IntexNorthwestLabs.Models
         
         [Required(ErrorMessage = "Please describe your order")]
         [Display(Name = "Please note what assays you would like and the corresponding compounds. Please make a note if you would like all tests (required and conditional) for each assay requested.")]
+        [StringLength(300, ErrorMessage = "Your response must be less than 300 characters")]
         public string OrderComment { get; set; }
 
         [Required]

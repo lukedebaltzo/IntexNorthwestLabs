@@ -16,26 +16,31 @@ namespace IntexNorthwestLabs.Models
         public int UserCode { get; set; }
 
         [Required]
-        [Display(Name = "Customer Code")]
+        [Display(Name = "Your Customer Code")]
         public int CustomerCode { get; set; }
 
         [Required]
         [Display(Name = "Username")]
+        [StringLength(30)]
         public string Username { get; set; }
 
         [Required]
+        [StringLength(30)]
         [Display(Name = "Password")]
         public string Password { get; set; }
 
         [Required]
+        [StringLength(30)]
         [Display(Name = "User First Name")]
         public string UserFirstName { get; set; }
 
         [Required]
+        [StringLength(30)]
         [Display(Name = "User Last Name")]
         public string UserLastName { get; set; }
 
         [Required]
+        [StringLength(30)]
         [Display(Name = "User Email")]
         public string UserEmail { get; set; }
     }
