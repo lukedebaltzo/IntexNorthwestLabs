@@ -11,107 +11,111 @@ using IntexNorthwestLabs.Models;
 
 namespace IntexNorthwestLabs.Controllers
 {
-    public class AssaysController : Controller
+    public class OrdersController : Controller
     {
         private NorthWestLabsContext db = new NorthWestLabsContext();
 
-        // GET: Assays
+        // GET: Orders
         public ActionResult Index()
         {
-            return View(db.Assay.ToList());
+            return View(db.Order.ToList());
         }
 
-        // GET: Assays/Details/5
+        // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assay assay = db.Assay.Find(id);
-            if (assay == null)
+            Order order = db.Order.Find(id);
+            if (order == null)
             {
                 return HttpNotFound();
             }
-            return View(assay);
+            return View(order);
         }
 
-        // GET: Assays/Create
+        // GET: Orders/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Assays/Create
+        // POST: Orders/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AssayCode,AssayType,AssayName,AssayDescription,AssayLiteratureRefs,AssayDuration")] Assay assay)
+        public ActionResult Create([Bind(Include = "OrderCode,CustomerCode,OrderDate,OrderComment,OrderRushed,DueDate,ArrivalDate,ReceivedBy,ReceivedQuote,QuoteCode,OrderStatus,OrderReport")] Order order)
         {
             if (ModelState.IsValid)
             {
-                db.Assay.Add(assay);
+                order.OrderDate = DateTime.Now;
+                order.ArrivalDate = null;
+                order.ReceivedBy = null;
+                order.OrderStatus = "Pending Compund Receival";
+                db.Order.Add(order);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(assay);
+            return View(order);
         }
 
-        // GET: Assays/Edit/5
+        // GET: Orders/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assay assay = db.Assay.Find(id);
-            if (assay == null)
+            Order order = db.Order.Find(id);
+            if (order == null)
             {
                 return HttpNotFound();
             }
-            return View(assay);
+            return View(order);
         }
 
-        // POST: Assays/Edit/5
+        // POST: Orders/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AssayCode,AssayType,AssayName,AssayDescription,AssayLiteratureRefs,AssayDuration")] Assay assay)
+        public ActionResult Edit([Bind(Include = "OrderCode,CustomerCode,OrderDate,OrderComment,OrderRushed,DueDate,ArrivalDate,ReceivedBy,ReceivedQuote,QuoteCode,OrderStatus,OrderReport")] Order order)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(assay).State = EntityState.Modified;
+                db.Entry(order).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(assay);
+            return View(order);
         }
 
-        // GET: Assays/Delete/5
+        // GET: Orders/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Assay assay = db.Assay.Find(id);
-            if (assay == null)
+            Order order = db.Order.Find(id);
+            if (order == null)
             {
                 return HttpNotFound();
             }
-            return View(assay);
+            return View(order);
         }
 
-        // POST: Assays/Delete/5
+        // POST: Orders/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Assay assay = db.Assay.Find(id);
-            db.Assay.Remove(assay);
+            Order order = db.Order.Find(id);
+            db.Order.Remove(order);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -11,7 +11,6 @@ namespace IntexNorthwestLabs.Models
     public class Order
     {
         [Key]
-        [Required]
         [Display(Name ="Order Code")]
         public int OrderCode { get; set; }
 
@@ -22,7 +21,7 @@ namespace IntexNorthwestLabs.Models
         [Display(Name = "Order Date")]
         public DateTime OrderDate { get; set; }
         
-        [Required]
+        [Required(ErrorMessage = "Please describe your order")]
         [Display(Name = "Please note what assays you would like and the corresponding compounds. Please make a note if you would like all tests (required and conditional) for each assay requested.")]
         public string OrderComment { get; set; }
 
@@ -35,10 +34,10 @@ namespace IntexNorthwestLabs.Models
         public DateTime DueDate { get; set; }
         
         [Display(Name = "Arrival Date")]
-        public DateTime ArrivalDate { get; set; }
+        public DateTime? ArrivalDate { get; set; }
         
-        [Display(Name = "Recieved By")]
-        public string RecievedBy { get; set; }
+        [Display(Name = "Received By")]
+        public string ReceivedBy { get; set; }
 
         [Required]
         [Display(Name = "Did you receive a quote for this order?")]
@@ -52,7 +51,6 @@ namespace IntexNorthwestLabs.Models
 
         [Display(Name = "Summary Report")]
         public byte[] OrderReport { get; set; }
-
-
+        
     }
 }

@@ -37,6 +37,7 @@ namespace IntexNorthwestLabs.Models
 
         [Required]
         [Display(Name = "Test Status")]
+        [StringLength(30)]
         public string TestStatus { get; set; }
 
         [Required]

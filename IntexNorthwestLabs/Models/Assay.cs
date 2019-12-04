@@ -11,21 +11,17 @@ namespace IntexNorthwestLabs.Models
     public class Assay
     {
         [Key]
-        [Required]
         [Display(Name = "Assay Code")]
         public int AssayCode { get; set; }
-
-        [Required]
+        
         [Display(Name = "Assay Type")]
         [StringLength(20)]
         public string AssayType { get; set; }
-
-        [Required]
+        
         [Display(Name = "Assay Name")]
         [StringLength(50)]
         public string AssayName { get; set; }
-
-        [Required]
+        
         [StringLength(300)]
         [Display(Name = "Assay Description")]
         public string AssayDescription { get; set; }
@@ -34,9 +30,8 @@ namespace IntexNorthwestLabs.Models
         [Display(Name = "Assay Literature References")]
         public string AssayLiteratureRefs { get; set; }
         
-        [Required]
         [Display(Name = "Typical Assay Duration")]
-        public int AssayDuration { get; set; }
+        public int AssayDuration { get; set; }//add days
 
     }
 }

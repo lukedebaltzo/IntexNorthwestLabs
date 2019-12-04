@@ -115,20 +115,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\AssaysController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\LocationsController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="DAL\NorthWestLabsContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Assay.cs" />
+    <Compile Include="Models\AssayDetail.cs" />
     <Compile Include="Models\AssayTest.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Discount.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderAssay.cs" />
+    <Compile Include="Models\Quote.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
@@ -150,14 +154,14 @@
     <Content Include="Views\Home\EmailSent.cshtml" />
     <Content Include="Views\Home\RequestQuote.cshtml" />
     <Content Include="Views\Locations\Index.cshtml" />
-    <Content Include="Views\Assays\Create.cshtml" />
-    <Content Include="Views\Assays\Delete.cshtml" />
-    <Content Include="Views\Assays\Details.cshtml" />
-    <Content Include="Views\Assays\Edit.cshtml" />
-    <Content Include="Views\Assays\Index.cshtml" />
     <Content Include="Views\Invoices\Details.cshtml" />
     <Content Include="Views\Invoices\Index.cshtml" />
     <Content Include="Views\Invoices\ViewCurrentInvoices.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
+    <Content Include="Views\Orders\Delete.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\Orders\Edit.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
