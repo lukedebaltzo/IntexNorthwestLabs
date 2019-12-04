@@ -47,7 +47,7 @@ namespace IntexNorthwestLabs.Models
         public bool ReceivedQuote { get; set; }
 
         [Display(Name = "Quote Code associated with this order")]
-        public int QuoteCode { get; set; }
+        public int? QuoteCode { get; set; }
         
         [Display(Name = "Order Status")]
         public string OrderStatus { get; set; }

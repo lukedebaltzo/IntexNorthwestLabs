@@ -18,7 +18,8 @@ namespace IntexNorthwestLabs.Controllers
         // GET: Invoices
         public ActionResult Index()
         {
-            return View(db.Invoice.ToList());
+            var obj = db.Invoice.ToList();
+            return View(obj);
         }
 
         // GET: Invoices/Details/5
@@ -41,7 +42,7 @@ namespace IntexNorthwestLabs.Controllers
         //view Current Invoices
         public ActionResult ViewCurrentInvoices()
         {
-            var obj = db.Invoice.ToList();
+           // var obj = db.Invoice.ToList().Where(PaidStatus == false);
 
             return View(obj.Find(x => x.PaidStatus == false));
         }
