@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace IntexNorthwestLabs.Controllers
 {
     public class HomeController : Controller
@@ -23,6 +24,7 @@ namespace IntexNorthwestLabs.Controllers
             return View();
         }
 
+       
 
         public ActionResult CustomerHome()
         {

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using IntexNorthwestLabs.DAL;
 using IntexNorthwestLabs.Models;
 
@@ -128,6 +129,34 @@ namespace IntexNorthwestLabs.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
+        {
+            String userName = form["User Name"].ToString();
+            String password = form["Password"].ToString();
+            var obj = db.User.FirstOrDefault(x => x.Username == userName);
+            String authUserName = obj.Username;
+            String authPassword = obj.Password;
+            
+
+            if (string.Equals(userName, authUserName) && (string.Equals(password, authPassword)))
+            {
+                FormsAuthentication.SetAuthCookie(userName, rememberMe);
+
+                return RedirectToAction("Index", "Customers");
+            }
+            else
+            {
+                return View();
+            }
+
         }
     }
 }
