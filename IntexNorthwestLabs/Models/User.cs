@@ -26,6 +26,8 @@ namespace IntexNorthwestLabs.Models
 
         [Required]
         [StringLength(30)]
+        [DataType(DataType.Password)]
+        [RegularExpression("^(?=.*[0-9]+.*)(?=.*[a-zA-Z]+.*)[0-9a-zA-Z]{8,}$", ErrorMessage = "Password must contain at least one letter, at least one number, and be longer than eight charaters.")]
         [Display(Name = "Password")]
         public string Password { get; set; }
 

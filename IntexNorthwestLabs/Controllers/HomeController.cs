@@ -1,9 +1,14 @@
-﻿using IntexNorthwestLabs.DAL;
+﻿using Dapper;
+using IntexNorthwestLabs.DAL;
+using IntexNorthwestLabs.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -128,6 +133,24 @@ namespace IntexNorthwestLabs.Controllers
             return View();
         }
 
+        /*
+        //GET api/aircraft
+        [HttpGet]
+        public async Task<IEnumerable<Assay>> Get(string model)
+        {
+            IEnumerable<Assay> AssayCatalog;
+
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                await connection.OpenAsync();
+
+                AssayCatalog = await connection.QueryAsync<Assay>("Assay_Catalog",
+                                new { Model = model },
+                                commandType: CommandType.StoredProcedure);
+            }
+            return AssayCatalog;
+        }
+        */
 
     }
 }

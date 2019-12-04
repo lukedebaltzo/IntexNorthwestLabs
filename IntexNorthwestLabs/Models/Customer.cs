@@ -34,7 +34,7 @@ namespace IntexNorthwestLabs.Models
         public string CustomerCity { get; set; }
 
         [Display(Name = "State")]
-        [StringLength(2, ErrorMessage = "Please use the 2 letter state Code")]
+        [StringLength(30, ErrorMessage = "The state field must be less than 30 characters. Please use abbreviations for longer names")]
         public string CustomerState { get; set; }
 
         [Display(Name = "Postal Code")]
@@ -66,9 +66,9 @@ namespace IntexNorthwestLabs.Models
         public string CustomerCreditCardExpiration { get; set; }
 
         [Display(Name = "Credit Card CVC")]
-        public int CustomerCreditCardCVC { get; set; }
+        public int? CustomerCreditCardCVC { get; set; }
 
-        [Display(Name = "Do you approve additional Testing?")]
+        [Display(Name = "Would you like to automatically approve all tests (required and conditional) for all assays requested in the future?")]
         public bool AdditionalTestingApproval { get; set; }
 
         [Display(Name = "Total Amount Due")]
