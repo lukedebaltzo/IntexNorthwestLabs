@@ -159,7 +159,7 @@ namespace IntexNorthwestLabs.Controllers
             {
                 FormsAuthentication.SetAuthCookie(userName, rememberMe);
 
-                return RedirectToAction("Index", "Customers", new { iCode = obj.CustomerCode });
+                return RedirectToAction("CustomerPortal", "Customers", new { id = obj.CustomerCode });
             }
             else
             {
@@ -167,5 +167,8 @@ namespace IntexNorthwestLabs.Controllers
             }
 
         }
+
+
+
     }
 }

@@ -18,18 +18,18 @@ namespace IntexNorthwestLabs
         [HttpGet]
         public async Task<IEnumerable<Assay>> Get(string model)
         {
-            IEnumerable<Assay> AssayCatalog;
+            IEnumerable<Assay> Assay_Catalog;
 
             using (var connection = new SqlConnection(@"Data Source=DESKTOP-5G1FALG\SQLEXPRESS;Initial Catalog=NorthWestLabs;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"))
             {
                 await connection.OpenAsync();
 
-                AssayCatalog = await connection.QueryAsync<Assay>("Assay_Catalog",
+                Assay_Catalog = await connection.QueryAsync<Assay>("Assay_Catalog",
                                 new { Model = model },
                                 commandType: CommandType.StoredProcedure);
             }
             
-            return AssayCatalog;
+            return Assay_Catalog;
 
         }
     }

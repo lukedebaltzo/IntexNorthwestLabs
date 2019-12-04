@@ -24,8 +24,8 @@ namespace IntexNorthwestLabs.Controllers
         public ActionResult CurrentOrders(int iCode)
         {
             var obj = db.Order.Where(x => x.CustomerCode == iCode);
-            //return View(obj.ToList());
-            return View(db.Order.ToList());
+            return View(obj.ToList());
+            //return View(db.Order.ToList());
         }
 
         // GET: Orders/Details/5
