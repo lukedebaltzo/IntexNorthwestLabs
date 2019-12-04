@@ -1,0 +1,106 @@
+﻿@model IntexNorthwestLabs.Models.Order
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderRushed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderRushed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceivedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceivedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceivedQuote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceivedQuote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QuoteCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QuoteCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderReport)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderReport)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.OrderCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -42,9 +42,9 @@ namespace IntexNorthwestLabs.Controllers
         //view Current Invoices
         public ActionResult ViewCurrentInvoices()
         {
-            var obj = db.Invoice.ToList();//.Where(PaidStatus == false);
-
-            return View(obj.Find(x => x.PaidStatus == false));
+            //var obj = db.Invoice.ToList();//.Where(PaidStatus == false);
+            var obj = db.Invoice.Where(x => x.PaidStatus == false);
+            return View(obj.ToList());
         }
 
         /*

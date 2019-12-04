@@ -21,6 +21,13 @@ namespace IntexNorthwestLabs.Controllers
             return View(db.Order.ToList());
         }
 
+        public ActionResult CurrentOrders(int iCode)
+        {
+            var obj = db.Order.Where(x => x.CustomerCode == iCode);
+            //return View(obj.ToList());
+            return View(db.Order.ToList());
+        }
+
         // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {
@@ -49,6 +56,7 @@ namespace IntexNorthwestLabs.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "OrderCode,CustomerCode,OrderDate,OrderComment,OrderRushed,DueDate,ArrivalDate,ReceivedBy,ReceivedQuote,QuoteCode,OrderStatus,OrderReport")] Order order)
         {
+
             if (ModelState.IsValid)
             {
                 order.OrderDate = DateTime.Now;
