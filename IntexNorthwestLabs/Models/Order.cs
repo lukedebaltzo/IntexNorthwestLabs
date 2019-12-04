@@ -19,11 +19,11 @@ namespace IntexNorthwestLabs.Models
         [Display(Name = "Customer Code")]
         public int CustomerCode { get; set; }
         
-        [Required]
         [Display(Name = "Order Date")]
         public DateTime OrderDate { get; set; }
         
-        [Display(Name = "Additional comments about the order")]
+        [Required]
+        [Display(Name = "Please note what assays you would like and the corresponding compounds. Please make a note if you would like all tests (required and conditional) for each assay requested.")]
         public string OrderComment { get; set; }
 
         [Required]
@@ -48,7 +48,11 @@ namespace IntexNorthwestLabs.Models
         public int QuoteCode { get; set; }
         
         [Display(Name = "Order Status")]
-        public int OrderStatus { get; set; }
+        public string OrderStatus { get; set; }
+
+        [Display(Name = "Summary Report")]
+        public byte[] OrderReport { get; set; }
+
 
     }
 }

@@ -20,24 +20,8 @@ namespace IntexNorthwestLabs.Models
         public int OrderCode { get; set; }
 
         [Required]
-        [Display(Name = "Raw Total")]
-        public decimal RawTotal { get; set; }
-
-        [Required]
-        [Display(Name = "Discount Code")]
-        public string DiscountCode { get; set; }
-
-        [Required]
-        [Display(Name = "Invoice Total")]
-        public decimal InvoiceTotal { get; set; }
-
-        [Required]
         [Display(Name = "Invoice Date")]
         public DateTime InvoiceDate { get; set; }
-
-        [Required]
-        [Display(Name = "Paid Status")]
-        public bool PaidStatus { get; set; }
         
         [Required]
         [Display(Name = "Due Date")]
@@ -48,16 +32,31 @@ namespace IntexNorthwestLabs.Models
         public DateTime InvoiceEarlyPayDate { get; set; }
 
         [Required]
+        [Display(Name = "Raw Total")]
+        public decimal RawTotal { get; set; }
+
+        [Required]
         [Display(Name = "Early Pay Discount")]
         public decimal InvoiceEarlyPayDiscount { get; set; }
+        
+        [Display(Name = "Other Discount Code")]
+        public string DiscountCode { get; set; }
+
+        [Required]
+        [Display(Name = "Invoice Total")]
+        public decimal InvoiceTotal { get; set; }
 
         [Required]
         [Display(Name = "Amount Paid")]
-        public decimal InvoiceAmountPaid { get; set; }
+        public decimal InvoiceAmountPaid { get; set; }//starts as $0
 
         [Required]
         [Display(Name = "Amount Due")]
         public decimal InvoiceAmountDue { get; set; }
+        
+        [Required]
+        [Display(Name = "Paid Status")]
+        public bool PaidStatus { get; set; }//starts as false
 
 
     }

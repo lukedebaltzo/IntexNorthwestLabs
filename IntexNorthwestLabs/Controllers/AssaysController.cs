@@ -11,108 +11,107 @@ using IntexNorthwestLabs.Models;
 
 namespace IntexNorthwestLabs.Controllers
 {
-    public class LocationsController : Controller
+    public class AssaysController : Controller
     {
         private NorthWestLabsContext db = new NorthWestLabsContext();
 
-        // GET: Locations
+        // GET: Assays
         public ActionResult Index()
         {
-            ViewBag.space = " ";
-            return View(db.Location.ToList());
+            return View(db.Assay.ToList());
         }
-        /*
-        // GET: Locations/Details/5
+
+        // GET: Assays/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Location location = db.Location.Find(id);
-            if (location == null)
+            Assay assay = db.Assay.Find(id);
+            if (assay == null)
             {
                 return HttpNotFound();
             }
-            return View(location);
+            return View(assay);
         }
 
-        // GET: Locations/Create
+        // GET: Assays/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Locations/Create
+        // POST: Assays/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LocationCode,LocationName,LocationAddress,LocationAddress2,LocationCity,LocationState,LocationPostalCode,LocationCountry")] Location location)
+        public ActionResult Create([Bind(Include = "AssayCode,AssayType,AssayName,AssayDescription,AssayLiteratureRefs,AssayDuration")] Assay assay)
         {
             if (ModelState.IsValid)
             {
-                db.Location.Add(location);
+                db.Assay.Add(assay);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(location);
+            return View(assay);
         }
 
-        // GET: Locations/Edit/5
+        // GET: Assays/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Location location = db.Location.Find(id);
-            if (location == null)
+            Assay assay = db.Assay.Find(id);
+            if (assay == null)
             {
                 return HttpNotFound();
             }
-            return View(location);
+            return View(assay);
         }
 
-        // POST: Locations/Edit/5
+        // POST: Assays/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "LocationCode,LocationName,LocationAddress,LocationAddress2,LocationCity,LocationState,LocationPostalCode,LocationCountry")] Location location)
+        public ActionResult Edit([Bind(Include = "AssayCode,AssayType,AssayName,AssayDescription,AssayLiteratureRefs,AssayDuration")] Assay assay)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(location).State = EntityState.Modified;
+                db.Entry(assay).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(location);
+            return View(assay);
         }
 
-        // GET: Locations/Delete/5
+        // GET: Assays/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Location location = db.Location.Find(id);
-            if (location == null)
+            Assay assay = db.Assay.Find(id);
+            if (assay == null)
             {
                 return HttpNotFound();
             }
-            return View(location);
+            return View(assay);
         }
 
-        // POST: Locations/Delete/5
+        // POST: Assays/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Location location = db.Location.Find(id);
-            db.Location.Remove(location);
+            Assay assay = db.Assay.Find(id);
+            db.Assay.Remove(assay);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -125,6 +124,5 @@ namespace IntexNorthwestLabs.Controllers
             }
             base.Dispose(disposing);
         }
-        */
     }
 }

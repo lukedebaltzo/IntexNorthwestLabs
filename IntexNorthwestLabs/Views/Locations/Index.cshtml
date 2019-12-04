@@ -74,13 +74,13 @@
 <h2>About Northwest Labs</h2><br />
 
 
-<h3>Our Company</h3><br />
+<h4>Our Company</h4><br />
 <p>CompanyDescription</p><br /><br />
 
-<h3>Our Company Mission</h3><br />
+<h4>Our Company Mission</h4><br />
 <p>CompanyMission</p><br /><br />
 
-<h3>Our offices are located at</h3><br />
+<h4>Our Offices</h4><br />
 
 
 @foreach (var item in Model)
@@ -88,7 +88,7 @@
     <!--
     @Html.DisplayFor(modelItem => item.LocationCode)
     <br />-->
-    @Html.DisplayFor(modelItem => item.LocationName) @ViewBag.space @Html.DisplayNameFor(model => model.LocationName)
+    <h3> @Html.DisplayFor(modelItem => item.LocationName) @ViewBag.space @Html.DisplayNameFor(model => model.LocationName)</h3>
     <br />
 
     @Html.DisplayFor(modelItem => item.LocationAddress)
