@@ -150,7 +150,7 @@ namespace IntexNorthwestLabs.Controllers
             fakehomie.UserPassword = "pass";
             fakehomie.CustomerCode = 1000;*/
             
-            User obj = db.User.DefaultIfEmpty(fakehomie).First(x => x.UserName == userName); //FirstOrDefault(x => x.UserName == userName);
+            User obj = /*db.User.DefaultIfEmpty(fakehomie).First(x => x.UserName == userName);*/ db.User.FirstOrDefault(x => x.UserName == userName);
             
             String authUserName = obj.UserName;
             String authPassword = obj.UserPassword;
