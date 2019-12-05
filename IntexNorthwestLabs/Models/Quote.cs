@@ -11,7 +11,7 @@ namespace IntexNorthwestLabs.Models
     public class Quote
     {
         [Key]
-        [Display(Name = "Quote Code")]
+        [Display(Name = "Quote Number")]
         public int QuoteCode { get; set; }
 
         [Display(Name = "Customer Code")]

@@ -11,7 +11,7 @@ namespace IntexNorthwestLabs.Models
     public class Order
     {
         [Key]
-        [Display(Name ="Order Code")]
+        [Display(Name ="Order Number")]
         public int OrderCode { get; set; }
         
         [Display(Name = "Customer Code")]
@@ -45,7 +45,7 @@ namespace IntexNorthwestLabs.Models
         [Display(Name = "Did you receive a quote for this order?")]
         public bool ReceivedQuote { get; set; }
 
-        [Display(Name = "Quote Code associated with this order")]
+        [Display(Name = "Quote Number associated with this order")]
         public int? QuoteCode { get; set; }
         
         [Display(Name = "Order Status")]

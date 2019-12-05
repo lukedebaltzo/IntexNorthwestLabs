@@ -48,10 +48,11 @@ namespace IntexNorthwestLabs.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserCode,CustomerCode,Username,Password,UserFirstName,UserLastName,UserEmail")] User user)
+        public ActionResult Create([Bind(Include = "UserCode,CustomerCode,Username,Password,UserFirstName,UserLastName,UserEmail")] User user, int iCode)
         {
             if (ModelState.IsValid)
             {
+                user.CustomerCode = iCode;
                 db.User.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("CreateLogIn");
@@ -60,9 +61,11 @@ namespace IntexNorthwestLabs.Controllers
             return View(user);
         }
 
-        public ActionResult CreateLogIn()
+        public ActionResult CreateLogIn(int iCode)
         {
-            return View();
+            var obj = db.User.Where(x => x.CustomerCode == iCode);
+            return View(obj.ToList());
+            //return View();
         }
 
         // GET: Users/Edit/5

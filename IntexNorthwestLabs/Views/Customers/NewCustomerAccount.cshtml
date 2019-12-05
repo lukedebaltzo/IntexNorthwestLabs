@@ -7,5 +7,5 @@
 
 <p>Your customer code is @ViewBag.code, please save this for your records. You will use this to create your user log in and to create orders.</p>
 
-<a href="@Url.Action("Create", "Users")" class="w3-bar-item w3-button">Create your user log in</a>
+<a href="@Url.Action("Create", "Users", new { iCode = ViewBag.code })" class="w3-bar-item w3-button">Create your user log in</a>
 

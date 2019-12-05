@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<IntexNorthwestLabs.Models.Order>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "All Orders";
 }
 
-<h2>Index</h2>
+<h2>All Orders</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -83,9 +80,7 @@
             @Html.DisplayFor(modelItem => item.OrderReport)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderCode }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrderCode }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrderCode })
+            @Html.ActionLink("Details", "Details", new { id=item.OrderCode }) 
         </td>
     </tr>
 }

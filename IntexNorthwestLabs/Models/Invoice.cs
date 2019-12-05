@@ -12,7 +12,7 @@ namespace IntexNorthwestLabs.Models
     {
         [Key]
         [Required]
-        [Display(Name = "Invoice Code")]
+        [Display(Name = "Invoice Number")]
         public int InvoiceCode { get; set; }
 
         [Display(Name = "Customer Code")]
