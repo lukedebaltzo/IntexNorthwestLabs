@@ -32,18 +32,19 @@
         <dd>
             @Html.DisplayFor(model => model.CustomerAddress)
         </dd>
-        <script>
-            if ( @Html.DisplayFor(model => model.CustomerAddress2) != null) {
+        @{
+            if (Html.DisplayFor(model => model.CustomerAddress2) == null)
+            {
 
-                @ViewBag.address2="Hello"; //Viewbag isnt working
-        <dt> @Html.DisplayNameFor(model => model.CustomerAddress2) </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerAddress2)
-                    </dd>
+                <dt> @Html.DisplayNameFor(model => model.CustomerAddress2) </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CustomerAddress2)
+                </dd>
             }
-        </script>
-        @ViewBag.address2
+        }
+
         <dt>
             @Html.DisplayNameFor(model => model.CustomerCity)
         </dt>
