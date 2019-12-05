@@ -26,6 +26,8 @@ namespace IntexNorthwestLabs.DAL
         public System.Data.Entity.DbSet<IntexNorthwestLabs.Models.Customer> Customers { get; set; }
 
         public System.Data.Entity.DbSet<IntexNorthwestLabs.Models.Assay_Catalog> Assay_Catalog { get; set; }
+
+        public System.Data.Entity.DbSet<IntexNorthwestLabs.Models.Test> Tests { get; set; }
     }
 }
 

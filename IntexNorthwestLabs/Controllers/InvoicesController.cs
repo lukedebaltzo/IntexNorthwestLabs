@@ -68,5 +68,10 @@ namespace IntexNorthwestLabs.Controllers
             return View(invoice);
         }
         */
+
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }

@@ -145,31 +145,44 @@ namespace IntexNorthwestLabs.Controllers
         {
             String userName = form["User Name"].ToString();
             String password = form["Password"].ToString();
-           /* User fakehomie = new User();
-            fakehomie.UserCode = 1000;
-            fakehomie.UserEmail = "tester@test.com";
-            fakehomie.UserFirstName = "Al";
-            fakehomie.UserLastName = "Ir";
-            fakehomie.UserName = "alir";
-            fakehomie.UserPassword = "pass";
-            fakehomie.CustomerCode = 1000;*/
-            
-            User obj = /*db.User.DefaultIfEmpty(fakehomie).First(x => x.UserName == userName);*/ db.User.FirstOrDefault(x => x.UserName == userName);
-            
-            String authUserName = obj.UserName;
-            String authPassword = obj.UserPassword;
+            /* User fakehomie = new User();
+             fakehomie.UserCode = 1000;
+             fakehomie.UserEmail = "tester@test.com";
+             fakehomie.UserFirstName = "Al";
+             fakehomie.UserLastName = "Ir";
+             fakehomie.UserName = "alir";
+             fakehomie.UserPassword = "pass";
+             fakehomie.CustomerCode = 1000;*/
 
-            if (string.Equals(userName, authUserName) && (string.Equals(password, authPassword)))
+            //User obj = /*db.User.DefaultIfEmpty(fakehomie).First(x => x.UserName == userName);*/ db.User.FirstOrDefault(x => x.UserName == userName);
+            //if ((db.User.FirstOrDefault(x => x.UserName == userName) == false )
+            //User obj = db.User.FirstOrDefault(x => x.UserName == userName);
+            string checkCode = db.User.FirstOrDefault(x => x.UserName == userName)?.UserName;
+            if (checkCode != null)
             {
-                FormsAuthentication.SetAuthCookie(userName, rememberMe);
+                User obj = db.User.FirstOrDefault(x => x.UserName == userName);
 
-                return RedirectToAction("CustomerPortal", "Customers", new { id = obj.CustomerCode });
+
+                String authUserName = obj.UserName;
+                String authPassword = obj.UserPassword;
+
+                    if (string.Equals(userName, authUserName) && (string.Equals(password, authPassword)))
+                    {
+                        FormsAuthentication.SetAuthCookie(userName, rememberMe);
+
+                        return RedirectToAction("CustomerPortal", "Customers", new { id = obj.CustomerCode });
+                    }
+                    else
+
+                    {
+                        return View();
+                    }
             }
             else
+
             {
                 return View();
             }
-
         }
 
 
