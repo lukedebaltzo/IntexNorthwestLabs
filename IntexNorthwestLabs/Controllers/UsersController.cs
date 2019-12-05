@@ -16,6 +16,7 @@ namespace IntexNorthwestLabs.Controllers
     {
         private NorthWestLabsContext db = new NorthWestLabsContext();
 
+
         // GET: Users
         public ActionResult Index()
         {
@@ -118,7 +119,7 @@ namespace IntexNorthwestLabs.Controllers
         // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int? id)
         {
             User user = db.User.Find(id);
             db.User.Remove(user);
@@ -187,6 +188,13 @@ namespace IntexNorthwestLabs.Controllers
             }
         }
 
+        public ActionResult ShowAllUsers(int? iCode)
+        {
+            List<User> UserList = new List<User>();
+            
+            //User allusers = db.User.Where(x => x.CustomerCode == iCode);
+            return View();
+        }
 
 
     }

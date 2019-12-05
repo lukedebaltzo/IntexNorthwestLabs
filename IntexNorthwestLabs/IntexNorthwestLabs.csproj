@@ -275,6 +275,8 @@
     <Content Include="Views\AssayTests\Details.cshtml" />
     <Content Include="Views\AssayTests\Edit.cshtml" />
     <Content Include="Views\AssayTests\Index.cshtml" />
+    <Content Include="Views\Invoices\PayInvoice.cshtml" />
+    <Content Include="Views\Users\ShowAllUsers.cshtml" />
     <Content Include="Views\Invoices\Create.cshtml" />
     <Content Include="Views\Assays\Create.cshtml" />
     <Content Include="Views\Assays\Delete.cshtml" />
