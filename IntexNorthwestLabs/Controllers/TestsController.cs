@@ -11,109 +11,108 @@ using IntexNorthwestLabs.Models;
 
 namespace IntexNorthwestLabs.Controllers
 {
-    public class AssayTestsController : Controller
+    public class TestsController : Controller
     {
+        public static List<Test> lstTest = new List<Test>();
         private NorthWestLabsContext db = new NorthWestLabsContext();
 
-        // GET: AssayTests
+        // GET: Tests
         public ActionResult Index()
         {
-            return View(db.AssayTest.ToList());
+            return View(db.Tests.ToList());
         }
 
-        // GET: AssayTests/Details/5
+        // GET: Tests/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AssayTest assayTest = db.AssayTest.Find(id);
-            if (assayTest == null)
+            Test test = db.Tests.Find(id);
+            if (test == null)
             {
                 return HttpNotFound();
             }
-            return View(assayTest);
+            return View(test);
         }
 
-        // GET: AssayTests/Create
+        // GET: Tests/Create
         public ActionResult Create()
         {
-            ViewBag.Assay = AssaysController.lstAssay;
-            ViewBag.Test = TestsController.lstTest;
             return View();
         }
 
-        // POST: AssayTests/Create
+        // POST: Tests/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AssayCode,TestCode,LTNumber,SequenceNumber,TestStatus,TestResultQuantitative,TestResultQualitative")] AssayTest assayTest)
+        public ActionResult Create([Bind(Include = "TestCode,TestName,TestDescription,TestType,TestDuration")] Test test)
         {
             if (ModelState.IsValid)
             {
-                db.AssayTest.Add(assayTest);
+                db.Tests.Add(test);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(assayTest);
+            return View(test);
         }
 
-        // GET: AssayTests/Edit/5
+        // GET: Tests/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AssayTest assayTest = db.AssayTest.Find(id);
-            if (assayTest == null)
+            Test test = db.Tests.Find(id);
+            if (test == null)
             {
                 return HttpNotFound();
             }
-            return View(assayTest);
+            return View(test);
         }
 
-        // POST: AssayTests/Edit/5
+        // POST: Tests/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AssayCode,TestCode,LTNumber,SequenceNumber,TestStatus,TestResultQuantitative,TestResultQualitative")] AssayTest assayTest)
+        public ActionResult Edit([Bind(Include = "TestCode,TestName,TestDescription,TestType,TestDuration")] Test test)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(assayTest).State = EntityState.Modified;
+                db.Entry(test).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(assayTest);
+            return View(test);
         }
 
-        // GET: AssayTests/Delete/5
+        // GET: Tests/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            AssayTest assayTest = db.AssayTest.Find(id);
-            if (assayTest == null)
+            Test test = db.Tests.Find(id);
+            if (test == null)
             {
                 return HttpNotFound();
             }
-            return View(assayTest);
+            return View(test);
         }
 
-        // POST: AssayTests/Delete/5
+        // POST: Tests/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            AssayTest assayTest = db.AssayTest.Find(id);
-            db.AssayTest.Remove(assayTest);
+            Test test = db.Tests.Find(id);
+            db.Tests.Remove(test);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

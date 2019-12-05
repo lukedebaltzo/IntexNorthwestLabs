@@ -68,6 +68,11 @@ namespace IntexNorthwestLabs.Controllers
             return View(invoice);
         }
         */
+
+        public ActionResult Create()
+        {
+            return View();
+        }
         public ActionResult PayInvoice(int? id)
         {
             Invoice invoicepay =  db.Invoice.Find(id);

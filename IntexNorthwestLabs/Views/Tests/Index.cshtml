@@ -1,0 +1,51 @@
+﻿@model IEnumerable<IntexNorthwestLabs.Models.Test>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TestName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestDuration)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestDuration)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TestCode }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TestCode }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TestCode })
+        </td>
+    </tr>
+}
+
+</table>
