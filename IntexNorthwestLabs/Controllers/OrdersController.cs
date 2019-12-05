@@ -28,6 +28,13 @@ namespace IntexNorthwestLabs.Controllers
             //return View(db.Order.ToList());
         }
 
+        public ActionResult PastOrders(int iCode)
+        {
+            var obj = db.Order.Where(x => x.CustomerCode == iCode && x.OrderStatus == "Report Completed" );
+            return View(obj.ToList());
+            //return View(db.Order.ToList());
+        }
+
         // GET: Orders/Details/5
         public ActionResult Details(int? id)
         {
