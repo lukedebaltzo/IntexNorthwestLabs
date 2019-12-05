@@ -178,12 +178,14 @@ namespace IntexNorthwestLabs.Controllers
                     else
 
                     {
+                    ViewBag.error = "Please enter a valid username and password";
                         return View();
                     }
             }
             else
 
             {
+                ViewBag.error = "Please enter a valid username and password";
                 return View();
             }
         }
