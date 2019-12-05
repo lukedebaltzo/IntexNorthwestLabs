@@ -263,6 +263,7 @@
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Orders\CurrentOrders.cshtml" />
     <Content Include="Views\Customers\CustomerPortal.cshtml" />
+    <Content Include="Views\Orders\PastOrders.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
