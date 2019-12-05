@@ -38,7 +38,7 @@ namespace IntexNorthwestLabs.Controllers
             }
             return View(invoice);
         }
-        
+
 
         // GET: Invoices
         //view Current Invoices
@@ -68,5 +68,11 @@ namespace IntexNorthwestLabs.Controllers
             return View(invoice);
         }
         */
+        public ActionResult PayInvoice(int? id)
+        {
+            Invoice invoicepay =  db.Invoice.Find(id);
+
+            return View(invoicepay);
+        }
     }
 }

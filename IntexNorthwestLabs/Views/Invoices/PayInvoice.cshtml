@@ -1,0 +1,127 @@
+﻿@model IntexNorthwestLabs.Models.Invoice
+
+@{
+    ViewBag.Title = "PayInvoice";
+}
+
+<h2>PayInvoice</h2>
+
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <!--<dt>
+            @Html.DisplayNameFor(model => model.CustomerCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerCode)
+        </dd>
+        -->
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OrderCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceDueDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceDueDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceEarlyPayDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceEarlyPayDate)
+        </dd>
+        <!--
+                <dt>
+                    @Html.DisplayNameFor(model => model.RawTotal)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.RawTotal)
+                </dd>
+        -->
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceEarlyPayDiscount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceEarlyPayDiscount)
+        </dd>
+        <!--
+                <dt>
+                    @Html.DisplayNameFor(model => model.DiscountCode)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DiscountCode)
+                </dd>
+        -->
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceTotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceTotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceAmountPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceAmountPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InvoiceAmountDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InvoiceAmountDue)
+        </dd>
+        <!--
+                <dt>
+                    @Html.DisplayNameFor(model => model.PaidStatus)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.PaidStatus)
+                </dd>
+        -->
+    </dl>
+</div>
+<form method="post"
+      action="RequestQuote">
+    <div class="container">
+        <span class="form-control-static"> Credit Card Number: </span> <input class="form-control" type="text" name="ccn" /> <br />
+        <span class="form-control-static"> Credit Card Expiration: </span> <input class="form-control" type="text" name="ccex" /> <br />
+        <span class="form-control-static"> Credit Card CVC: </span> <input class="form-control" type="text" name="cccvc" /> <br />
+        <span class="form-control-static"> Payment Amount: </span> <input class="form-control" type="text" name="amount" /> <br />
+
+        <input class="btn btn-primary" type="submit" value="Submit Payment" />
+    </div>
+</form>
+<!--
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.InvoiceCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+-->

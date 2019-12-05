@@ -16,6 +16,7 @@ namespace IntexNorthwestLabs.Controllers
     {
         private NorthWestLabsContext db = new NorthWestLabsContext();
 
+
         // GET: Users
         public ActionResult Index()
         {
@@ -118,7 +119,7 @@ namespace IntexNorthwestLabs.Controllers
         // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(int? id)
         {
             User user = db.User.Find(id);
             db.User.Remove(user);
@@ -152,9 +153,9 @@ namespace IntexNorthwestLabs.Controllers
             fakehomie.UserLastName = "Ir";
             fakehomie.UserName = "alir";
             fakehomie.UserPassword = "pass";
-            fakehomie.CustomerCode = 1000;*/
-            
-            User obj = /*db.User.DefaultIfEmpty(fakehomie).First(x => x.UserName == userName);*/ db.User.FirstOrDefault(x => x.UserName == userName);
+            fakehomie.CustomerCode = 1000;
+            db.User.DefaultIfEmpty(fakehomie).First(x => x.UserName == userName);*/ 
+            User obj = db.User.FirstOrDefault(x => x.UserName == userName);
             
             String authUserName = obj.UserName;
             String authPassword = obj.UserPassword;
@@ -172,6 +173,13 @@ namespace IntexNorthwestLabs.Controllers
 
         }
 
+        public ActionResult ShowAllUsers(int? iCode)
+        {
+            List<User> UserList = new List<User>();
+            
+            //User allusers = db.User.Where(x => x.CustomerCode == iCode);
+            return View();
+        }
 
 
     }
