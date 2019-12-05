@@ -265,6 +265,7 @@
     <Content Include="Views\Orders\CurrentOrders.cshtml" />
     <Content Include="Views\Customers\CustomerPortal.cshtml" />
     <Content Include="Views\Orders\PastOrders.cshtml" />
+    <Content Include="Views\Assay_Catalog\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -275,7 +276,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Views\Assay_Catalog\" />
     <Folder Include="Views\User\" />
   </ItemGroup>
   <PropertyGroup>

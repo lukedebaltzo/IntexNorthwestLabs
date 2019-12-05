@@ -16,7 +16,7 @@ namespace IntexNorthwestLabs.Controllers
         // GET: Assay_Catalog
         public ActionResult Index()
         {
-            return View();
+            return View(db.Assay_Catalog.ToList());
         }
     }
 }

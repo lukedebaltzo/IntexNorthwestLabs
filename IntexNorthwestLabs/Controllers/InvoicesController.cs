@@ -16,10 +16,12 @@ namespace IntexNorthwestLabs.Controllers
         private NorthWestLabsContext db = new NorthWestLabsContext();
 
         // GET: Invoices
-        public ActionResult Index()
+        public ActionResult Index(int? iCode)
         {
-            var obj = db.Invoice.ToList();
-            return View(obj);
+            var obj = db.Invoice.Where(x => x.CustomerCode == iCode);
+            return View(obj.ToList());
+            //var obj = db.Invoice.ToList();
+            //return View(obj);
         }
 
         // GET: Invoices/Details/5
@@ -40,10 +42,12 @@ namespace IntexNorthwestLabs.Controllers
 
         // GET: Invoices
         //view Current Invoices
-        public ActionResult ViewCurrentInvoices()
+        public ActionResult ViewCurrentInvoices(int? iCode)
         {
             //var obj = db.Invoice.ToList();//.Where(PaidStatus == false);
-            var obj = db.Invoice.Where(x => x.PaidStatus == false);
+            //var obj = db.Invoice.Where(x => x.CustomerCode == iCode);
+            //return View(obj.ToList());
+            var obj = db.Invoice.Where(x => x.PaidStatus == false && x.CustomerCode == iCode);
             return View(obj.ToList());
         }
 

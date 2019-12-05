@@ -47,7 +47,6 @@ namespace IntexNorthwestLabs.Models
         [Display(Name = "Required Test")]
         public bool RequiredTest { get; set; }
 
-        [Column(Order = 3)]
         [Display(Name = "Compound Name")]
         public string CompoundName { get; set; }
 

@@ -16,9 +16,11 @@ namespace IntexNorthwestLabs.Controllers
         private NorthWestLabsContext db = new NorthWestLabsContext();
 
         // GET: Orders
-        public ActionResult Index()
+        public ActionResult Index(int iCode)
         {
-            return View(db.Order.ToList());
+            var obj = db.Order.Where(x => x.CustomerCode == iCode);
+            return View(obj.ToList());
+            //return View(db.Order.ToList());
         }
 
         public ActionResult CurrentOrders(int iCode)

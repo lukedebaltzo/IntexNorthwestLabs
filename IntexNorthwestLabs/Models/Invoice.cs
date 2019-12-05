@@ -15,6 +15,9 @@ namespace IntexNorthwestLabs.Models
         [Display(Name = "Invoice Code")]
         public int InvoiceCode { get; set; }
 
+        [Display(Name = "Customer Code")]
+        public int CustomerCode { get; set; }
+
         [Required]
         [Display(Name = "Order Number")]
         public int OrderCode { get; set; }
