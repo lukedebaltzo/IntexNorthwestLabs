@@ -13,8 +13,7 @@ namespace IntexNorthwestLabs.Models
         [Key]
         [Display(Name ="Order Code")]
         public int OrderCode { get; set; }
-
-        [Required]
+        
         [Display(Name = "Customer Code")]
         public int CustomerCode { get; set; }
         

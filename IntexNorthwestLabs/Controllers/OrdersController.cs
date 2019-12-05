@@ -23,7 +23,7 @@ namespace IntexNorthwestLabs.Controllers
 
         public ActionResult CurrentOrders(int iCode)
         {
-            var obj = db.Order.Where(x => x.CustomerCode == iCode);
+            var obj = db.Order.Where(x => x.CustomerCode == iCode && x.OrderStatus != "Report Completed");
             return View(obj.ToList());
             //return View(db.Order.ToList());
         }
@@ -51,8 +51,9 @@ namespace IntexNorthwestLabs.Controllers
         }
 
         // GET: Orders/Create
-        public ActionResult Create()
+        public ActionResult Create(int iCode)
         {
+           // Order order = db.Order.Find(iCode);
             return View();
         }
 
@@ -61,11 +62,12 @@ namespace IntexNorthwestLabs.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OrderCode,CustomerCode,OrderDate,OrderComment,OrderRushed,DueDate,ArrivalDate,ReceivedBy,ReceivedQuote,QuoteCode,OrderStatus,OrderReport")] Order order)
+        public ActionResult Create([Bind(Include = "OrderCode,CustomerCode,OrderDate,OrderComment,OrderRushed,DueDate,ArrivalDate,ReceivedBy,ReceivedQuote,QuoteCode,OrderStatus,OrderReport")] Order order, int iCode)
         {
 
             if (ModelState.IsValid)
             {
+                order.CustomerCode = iCode;
                 order.OrderDate = DateTime.Now;
                 order.ArrivalDate = null;
                 order.ReceivedBy = null;

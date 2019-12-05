@@ -1,14 +1,15 @@
 ﻿@model IEnumerable<IntexNorthwestLabs.Models.Order>
 
 @{
-    ViewBag.Title = "CurrentOrders";
+    ViewBag.Title = "Current Orders";
 }
 
-<h2>CurrentOrders</h2>
+<h2>Curren tOrders</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Back to Customer Portal", "CustomerPortal", "Customers" )
 </p>
+
 <table class="table">
     <tr>
         <th>
@@ -47,47 +48,46 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderComment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderRushed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DueDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArrivalDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReceivedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReceivedQuote)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuoteCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderReport)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderCode }) |
-            @Html.ActionLink("Details", "Details", new { id=item.OrderCode }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrderCode })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderRushed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceivedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReceivedQuote)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuoteCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderReport)
+            </td>
+            <td>
+                @Html.ActionLink("Order Details", "Details", new { id = item.OrderCode })
+            </td>
+        </tr>
+    }
 
 </table>
