@@ -4,9 +4,14 @@
 }
 
 <h2>Login</h2>
+<br />
+<p style="color: red">
+    @ViewBag.error
+</p>
 
 @using (Html.BeginForm("Login", "Users", FormMethod.Post))
 {
+
     <label for="inputUserName">User Name</label>
     @Html.TextBox("User Name")
     <label for="inputPassword">Password</label>
