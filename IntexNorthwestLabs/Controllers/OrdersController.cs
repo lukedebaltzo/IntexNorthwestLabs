@@ -76,7 +76,7 @@ namespace IntexNorthwestLabs.Controllers
                 order.OrderStatus = "Pending Compund Receival";
                 db.Order.Add(order);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { iCode = order.CustomerCode });
             }
 
             return View(order);

@@ -13,7 +13,7 @@ namespace IntexNorthwestLabs.Models
         [Key]
         [Column(Order = 1)]
         [Required]
-        [Display(Name = "Order Code")]
+        [Display(Name = "Order Number")]
         public int OrderCode { get; set; } //from the order tables
 
         [Key]
