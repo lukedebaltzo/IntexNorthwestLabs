@@ -192,6 +192,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AssayTestsController.cs" />
     <Compile Include="Controllers\Assay_CatalogController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -266,6 +267,11 @@
     <Content Include="Views\Customers\CustomerPortal.cshtml" />
     <Content Include="Views\Orders\PastOrders.cshtml" />
     <Content Include="Views\Assay_Catalog\Index.cshtml" />
+    <Content Include="Views\AssayTests\Create.cshtml" />
+    <Content Include="Views\AssayTests\Delete.cshtml" />
+    <Content Include="Views\AssayTests\Details.cshtml" />
+    <Content Include="Views\AssayTests\Edit.cshtml" />
+    <Content Include="Views\AssayTests\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
