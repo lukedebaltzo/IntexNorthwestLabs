@@ -56,7 +56,7 @@ namespace IntexNorthwestLabs.Controllers
                 customer.TotalAmountDue = 0;
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("NewCustomerAccount", new { iCode = customer.CustomerCode });
+                return RedirectToAction("Create","Users", new { iCode = customer.CustomerCode });
                
             }
 
