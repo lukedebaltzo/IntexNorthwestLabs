@@ -2,8 +2,10 @@
 @{
     ViewBag.Title = "Home";
 }
-<img src="~/Content/images/NWlogo.png" />
-<h2>Northwest Labs</h2>
+<center>
+    <img src="~/Content/images/NWlogo.png" style="max-height: 200px" />
+</center>
+
 
 <a href="@Url.Action("Index", "Locations")" class="w3-bar-item w3-button">About Northwest Labs</a>
 <a href="@Url.Action("Index", "Assay_Catalog")" class="w3-bar-item w3-button">View Assay Test Catalog</a>
