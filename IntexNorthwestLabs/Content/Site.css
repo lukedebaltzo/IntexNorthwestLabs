@@ -52,3 +52,26 @@ a.navbar-brand {
 .navbar-brand {
     float: right !important;
 }
+
+.btn-primary {
+    color: #fff;
+    background-color: #C72c41 !important;
+    border-color: #801336 !important;
+}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: #801336 !important;
+        border-color: #801336 !important;
+    }
+
+footer {
+    position: fixed !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    background-color: #C72c41 !important;
+    color: white !important;
+    text-align: center !important;
+    padding: 10px !important;
+}
