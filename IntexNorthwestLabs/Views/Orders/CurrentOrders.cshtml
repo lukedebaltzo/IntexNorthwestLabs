@@ -4,46 +4,31 @@
     ViewBag.Title = "Current Orders";
 }
 
-<h2>Curren tOrders</h2>
+<h2>Current Orders</h2>
 
 <p>
-    @Html.ActionLink("Back to Customer Portal", "CustomerPortal", "Customers" )
+    @Html.ActionLink("Back to Customer Portal", "CustomerPortal", "Customers")
 </p>
 
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerCode)
+            @Html.DisplayNameFor(model => model.OrderCode)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OrderDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderComment)
+            Assays Ordered
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderRushed)
+            Rushed Order?
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DueDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArrivalDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReceivedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReceivedQuote)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuoteCode)
+            Due Date
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OrderStatus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OrderReport)
         </th>
         <th></th>
     </tr>
@@ -52,7 +37,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CustomerCode)
+                @Html.DisplayFor(modelItem => item.OrderCode)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.OrderDate)
@@ -67,25 +52,11 @@
                 @Html.DisplayFor(modelItem => item.DueDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ArrivalDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReceivedBy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReceivedQuote)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.QuoteCode)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.OrderStatus)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OrderReport)
-            </td>
-            <td>
-                @Html.ActionLink("Order Details", "Details", new { id = item.OrderCode })
+                <!-- @Html.ActionLink("Order Details", "Index", "Test_Results", new { iCode = Html.DisplayFor(modelItem => item.CustomerCode) })-->
+                <a href="@Url.Action("Index", "Test_Results", new { iCode = Html.DisplayFor(modelItem => item.CustomerCode) })">Order Details</a>
             </td>
         </tr>
     }

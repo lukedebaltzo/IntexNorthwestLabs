@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<IntexNorthwestLabs.Models.Order>
 
 @{
-    ViewBag.Title = "PastOrders";
+    ViewBag.Title = "Past Orders";
 }
 
-<h2>PastOrders</h2>
+<h2>Past Orders</h2>
 
 <p>
     @Html.ActionLink("Back to Customer Portal", "CustomerPortal", "Customers")
@@ -12,34 +12,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerCode)
+            @Html.DisplayNameFor(model => model.OrderCode)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OrderDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderComment)
+            Assays Ordered
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrderRushed)
+            Rushed Order?
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DueDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArrivalDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReceivedBy)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReceivedQuote)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuoteCode)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OrderStatus)
+            Due Date
         </th>
         <th>
             @Html.DisplayNameFor(model => model.OrderReport)
@@ -65,25 +50,14 @@
             @Html.DisplayFor(modelItem => item.DueDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ArrivalDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReceivedBy)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReceivedQuote)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuoteCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderStatus)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.OrderReport)
         </td>
+        <!--     <td>
+              @Html.ActionLink("Details", "Details", new { id = item.OrderCode })
+          </td>-->
         <td>
-            @Html.ActionLink("Details", "Details", new { id=item.OrderCode}) 
+            <!-- @Html.ActionLink("Order Details", "Index", "Test_Results", new { iCode = Html.DisplayFor(modelItem => item.CustomerCode) })-->
+            <a href="@Url.Action("Index", "Test_Results", new { iCode = Html.DisplayFor(modelItem => item.CustomerCode) })">Order Details</a>
         </td>
     </tr>
 }

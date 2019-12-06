@@ -90,7 +90,7 @@ namespace IntexNorthwestLabs.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserCode,CustomerCode,Username,Password,UserFirstName,UserLastName,UserEmail")] User user)
+        public ActionResult Edit([Bind(Include = "UserCode,CustomerCode,UserName,UserPassword,UserFirstName,UserLastName,UserEmail")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -177,7 +177,7 @@ namespace IntexNorthwestLabs.Controllers
 
                     {
                     ViewBag.error = "Please enter a valid username and password";
-                        return View();
+                       return View();
                     }
             }
             else
@@ -188,12 +188,13 @@ namespace IntexNorthwestLabs.Controllers
             }
         }
 
-        public ActionResult ShowAllUsers(int? iCode)
+        public ActionResult ShowAllUsers(int iCode)
         {
-            List<User> UserList = new List<User>();
-            
+            //List<User> UserList = new List<User>();
+            var obj = db.User.Where(x => x.CustomerCode == iCode);
+            return View(obj.ToList());
             //User allusers = db.User.Where(x => x.CustomerCode == iCode);
-            return View();
+            //return View();
         }
 
 

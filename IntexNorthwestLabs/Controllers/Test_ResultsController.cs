@@ -11,130 +11,109 @@ using IntexNorthwestLabs.Models;
 
 namespace IntexNorthwestLabs.Controllers
 {
-    public class OrdersController : Controller
+    public class Test_ResultsController : Controller
     {
         private NorthWestLabsContext db = new NorthWestLabsContext();
 
-        // GET: Orders
+        // GET: Test_Results
         public ActionResult Index(int iCode)
         {
-            var obj = db.Order.Where(x => x.CustomerCode == iCode);
+            var obj = db.Test_Results.Where(x => x.CustomerCode == iCode);
             return View(obj.ToList());
-            //return View(db.Order.ToList());
+            //return View(db.Test_Results.ToList());
         }
 
-        public ActionResult CurrentOrders(int iCode)
-        {
-            var obj = db.Order.Where(x => x.CustomerCode == iCode && x.OrderStatus != "Report Completed");
-            return View(obj.ToList());
-            //return View(db.Order.ToList());
-        }
-
-        public ActionResult PastOrders(int iCode)
-        {
-            var obj = db.Order.Where(x => x.CustomerCode == iCode && x.OrderStatus == "Report Completed");
-            return View(obj.ToList());
-            //return View(db.Order.ToList());
-        }
-
-        // GET: Orders/Details/5
+        // GET: Test_Results/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Order.Find(id);
-            if (order == null)
+            Test_Results test_Results = db.Test_Results.Find(id);
+            if (test_Results == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(test_Results);
         }
 
-        // GET: Orders/Create
-        public ActionResult Create(int iCode)
+        // GET: Test_Results/Create
+        public ActionResult Create()
         {
-           // Order order = db.Order.Find(iCode);
             return View();
         }
 
-        // POST: Orders/Create
+        // POST: Test_Results/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "OrderCode,CustomerCode,OrderDate,OrderComment,OrderRushed,DueDate,ArrivalDate,ReceivedBy,ReceivedQuote,QuoteCode,OrderStatus,OrderReport")] Order order, int iCode)
+        public ActionResult Create([Bind(Include = "AssayCode,TestCode,LTNumber,SequenceNumber,AssayName,TestName,CompoundName,TestStatus,TestResultQuantitative,TestResultQualitative,CustomerCode")] Test_Results test_Results)
         {
-
             if (ModelState.IsValid)
             {
-                order.CustomerCode = iCode;
-                order.OrderDate = DateTime.Now;
-                order.ArrivalDate = null;
-                order.ReceivedBy = null;
-                order.OrderStatus = "Pending Compund Receival";
-                db.Order.Add(order);
+                db.Test_Results.Add(test_Results);
                 db.SaveChanges();
-                return RedirectToAction("Index", new { iCode = order.CustomerCode });
+                return RedirectToAction("Index");
             }
 
-            return View(order);
+            return View(test_Results);
         }
 
-        // GET: Orders/Edit/5
+        // GET: Test_Results/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Order.Find(id);
-            if (order == null)
+            Test_Results test_Results = db.Test_Results.Find(id);
+            if (test_Results == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(test_Results);
         }
 
-        // POST: Orders/Edit/5
+        // POST: Test_Results/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "OrderCode,CustomerCode,OrderDate,OrderComment,OrderRushed,DueDate,ArrivalDate,ReceivedBy,ReceivedQuote,QuoteCode,OrderStatus,OrderReport")] Order order)
+        public ActionResult Edit([Bind(Include = "AssayCode,TestCode,LTNumber,SequenceNumber,AssayName,TestName,CompoundName,TestStatus,TestResultQuantitative,TestResultQualitative,CustomerCode")] Test_Results test_Results)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(order).State = EntityState.Modified;
+                db.Entry(test_Results).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(order);
+            return View(test_Results);
         }
 
-        // GET: Orders/Delete/5
+        // GET: Test_Results/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Order order = db.Order.Find(id);
-            if (order == null)
+            Test_Results test_Results = db.Test_Results.Find(id);
+            if (test_Results == null)
             {
                 return HttpNotFound();
             }
-            return View(order);
+            return View(test_Results);
         }
 
-        // POST: Orders/Delete/5
+        // POST: Test_Results/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Order order = db.Order.Find(id);
-            db.Order.Remove(order);
+            Test_Results test_Results = db.Test_Results.Find(id);
+            db.Test_Results.Remove(test_Results);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

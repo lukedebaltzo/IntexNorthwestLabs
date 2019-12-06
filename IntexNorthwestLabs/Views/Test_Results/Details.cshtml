@@ -1,0 +1,74 @@
+﻿@model IntexNorthwestLabs.Models.Test_Results
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Test_Results</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompoundName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompoundName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestResultQuantitative)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestResultQuantitative)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestResultQualitative)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestResultQualitative)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerCode)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

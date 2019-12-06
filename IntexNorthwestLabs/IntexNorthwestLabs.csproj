@@ -201,6 +201,7 @@
     <Compile Include="Controllers\LocationsController.cs" />
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
+    <Compile Include="Controllers\Test_ResultsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DAL\NorthWestLabsContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -288,6 +289,11 @@
     <Content Include="Views\Tests\Details.cshtml" />
     <Content Include="Views\Tests\Edit.cshtml" />
     <Content Include="Views\Tests\Index.cshtml" />
+    <Content Include="Views\Test_Results\Create.cshtml" />
+    <Content Include="Views\Test_Results\Delete.cshtml" />
+    <Content Include="Views\Test_Results\Details.cshtml" />
+    <Content Include="Views\Test_Results\Edit.cshtml" />
+    <Content Include="Views\Test_Results\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
