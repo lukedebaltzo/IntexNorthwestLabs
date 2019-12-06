@@ -42,5 +42,13 @@ img {
 }
 
 hr {
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ccc !important;
+}
+
+a.navbar-brand {
+    margin-top: 5px !important;
+}
+
+.navbar-brand {
+    float: right !important;
 }
