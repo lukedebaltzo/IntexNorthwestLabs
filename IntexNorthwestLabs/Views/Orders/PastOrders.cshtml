@@ -6,9 +6,9 @@
 
 <h2>Past Orders</h2>
 
-<p>
+<!--<p>
     @Html.ActionLink("Back to Customer Portal", "CustomerPortal", "Customers")
-</p>
+</p>-->
 <table class="table">
     <tr>
         <th>
@@ -32,34 +32,36 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderComment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderRushed)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DueDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderReport)
-        </td>
-        <!--     <td>
-              @Html.ActionLink("Details", "Details", new { id = item.OrderCode })
-          </td>-->
-        <td>
-            <!-- @Html.ActionLink("Order Details", "Index", "Test_Results", new { iCode = Html.DisplayFor(modelItem => item.CustomerCode) })-->
-            <a href="@Url.Action("Index", "Test_Results", new { iCode = Html.DisplayFor(modelItem => item.CustomerCode) })">Order Details</a>
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderRushed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderReport)
+            </td>
+            <!--     <td>
+                  @Html.ActionLink("Details", "Details", new { id = item.OrderCode })
+              </td>-->
+            <td>
+                <!-- @Html.ActionLink("Order Details", "Index", "Test_Results", new { iCode = Html.DisplayFor(modelItem => item.CustomerCode) })-->
+                <a href="@Url.Action("Index", "Test_Results", new { iCode = Html.DisplayFor(modelItem => item.CustomerCode) })">Order Details</a>
+            </td>
+        </tr>
+    }
 
 </table>
+@Html.ActionLink("Back to Customer Portal", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary btn-default" })

@@ -17,7 +17,8 @@
         <span class="form-control-static"> Assay: </span> <input class="form-control" type="text" name="assay" /> <br />
         <span class="form-control-static"> Compound Name and Description: </span> <input class="form-control" type="text" name="compund" /> <br />
         <span class="form-control-static"> Compound Weight: </span> <input class="form-control" type="text" name="weight" /> <br />
-        <input class="btn btn-primary"  value="Add Another Assay" /><br /><br />
+        <input class="btn btn-primary" value="Add Another Assay" /><br /><br />
         <input class="btn btn-primary" type="submit" value="Send" />
     </div>
 </form>
+@Html.ActionLink("Back to Customer Portal", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary btn-default" })

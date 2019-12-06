@@ -67,7 +67,8 @@
                     @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
                      @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })-->
             </td>
-</tr>
+        </tr>
     }
 
 </table>
+@Html.ActionLink("Back to Customer Portal", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary btn-default" })

@@ -13,8 +13,8 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
- 
-   
+
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <!--
@@ -73,3 +73,4 @@
         </div>
     </div>
 }
+@Html.ActionLink("Back to Customer Portal", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary btn-default" })

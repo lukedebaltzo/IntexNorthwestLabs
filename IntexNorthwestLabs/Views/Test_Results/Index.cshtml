@@ -7,6 +7,7 @@
 <h2>Order Details</h2>
 
 
+
 <table class="table">
     <tr>
         <th>
@@ -29,27 +30,31 @@
         </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssayName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompoundName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestResultQuantitative)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestResultQualitative)
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompoundName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestResultQuantitative)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestResultQualitative)
+            </td>
+        </tr>
+    }
 
 </table>
+<!--@Html.ActionLink("Back to Customer Portal", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary btn-default" })
+@Html.ActionLink("Back to Orders","CurrentOrders","Orders", Html.ValueFor(model => model.CustomerCode))
+-- >

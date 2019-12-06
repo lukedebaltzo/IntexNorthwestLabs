@@ -18,6 +18,7 @@ namespace IntexNorthwestLabs.Controllers
         // GET: Test_Results
         public ActionResult Index(int iCode)
         {
+            
             var obj = db.Test_Results.Where(x => x.CustomerCode == iCode);
             return View(obj.ToList());
             //return View(db.Test_Results.ToList());
