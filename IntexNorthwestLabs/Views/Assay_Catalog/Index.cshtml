@@ -45,45 +45,48 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssayType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssayName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssayDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssayLiteratureRefs)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestType)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestDuration)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RequiredTest)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompoundName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaterialName)
-        </td>
-        <td>
-            @Html.ActionLink("Details", "Details", new { id=item.AssayCode })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssayType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssayDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssayLiteratureRefs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequiredTest)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompoundName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaterialName)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.AssayCode })
+            </td>
+        </tr>
+    }
 
 </table>
+<hr />
+<!--@Html.ActionLink("Back to Home", "Index", "Home")-->
