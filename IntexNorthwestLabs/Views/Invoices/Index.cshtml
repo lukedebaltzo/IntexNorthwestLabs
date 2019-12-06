@@ -6,7 +6,6 @@
 
 <h2>Your Invoices</h2>
 
-
 <table class="table">
     <tr>
         <th>
@@ -24,15 +23,11 @@
         <th>
             @Html.DisplayNameFor(model => model.InvoiceEarlyPayDate)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RawTotal)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.InvoiceEarlyPayDiscount)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DiscountCode)
-        </th>
+
         <th>
             @Html.DisplayNameFor(model => model.InvoiceTotal)
         </th>
@@ -48,61 +43,60 @@
 
     @foreach (var item in Model)
     {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.InvoiceCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OrderCode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InvoiceDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InvoiceDueDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InvoiceEarlyPayDate)
-        </td>
-        <td>
-           $@Html.DisplayFor(modelItem => item.RawTotal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InvoiceEarlyPayDiscount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiscountCode)
-        </td>
-        <td>
-           $@Html.DisplayFor(modelItem => item.InvoiceTotal)
-        </td>
-        <td>
-           $@Html.DisplayFor(modelItem => item.InvoiceAmountPaid)
-        </td>
-        <td>
-           $@Html.DisplayFor(modelItem => item.InvoiceAmountDue)
-        </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceDueDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceEarlyPayDate)
+            </td>
 
-        @{
-            if (Html.DisplayFor(modelItem => item.PaidStatus).ToString() == "false")
-            {
-                <td>
-                    <!--Add if statement to only show paid if paid status = 0-->
-                    @Html.ActionLink("Pay", "PayInvoice", new { id = item.InvoiceCode })
-                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InvoiceEarlyPayDiscount)
+            </td>
+
+            <td>
+                $@Html.DisplayFor(modelItem => item.InvoiceTotal)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.InvoiceAmountPaid)
+            </td>
+            <td>
+                $@Html.DisplayFor(modelItem => item.InvoiceAmountDue)
+            </td>
+
+            @{
+                if (Html.DisplayFor(modelItem => item.PaidStatus).ToString() == "false")
+                {
+                    <td>
+                        <!--Add if statement to only show paid if paid status = 0-->
+                        @Html.ActionLink("Pay", "PayInvoice", new { id = item.InvoiceCode })
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
             }
-            else
-            {
-                <td></td>
-            }
-        }
 
 
 
 
 
-    </tr>
+        </tr>
     }
 
 </table>
 
+<br />
+
+@Html.ActionLink("Back to previous page", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary btn-default" })
