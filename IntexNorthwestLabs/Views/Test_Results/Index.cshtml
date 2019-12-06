@@ -7,6 +7,7 @@
 <h2>Order Details</h2>
 
 
+
 <table class="table">
     <tr>
         <th>
@@ -29,27 +30,28 @@
         </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssayName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompoundName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestResultQuantitative)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestResultQualitative)
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompoundName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestResultQuantitative)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestResultQualitative)
+            </td>
+        </tr>
+    }
 
 </table>

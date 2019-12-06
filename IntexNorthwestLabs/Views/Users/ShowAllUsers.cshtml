@@ -18,31 +18,33 @@
             Last Name
         </th>
         <th>
-           Email
+            Email
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserFirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserLastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserEmail)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UserCode }) |
-            @Html.ActionLink("Details", "Details", new { id=item.UserCode }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UserCode })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserEmail)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.UserCode }) |
+                @Html.ActionLink("Details", "Details", new { id = item.UserCode }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.UserCode })
+            </td>
+        </tr>
+    }
 
 </table>
+@Html.ActionLink("Back to Customer Portal", null, null, null, new { href = Request.UrlReferrer, @class = "btn btn-primary btn-default" })
