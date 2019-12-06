@@ -39,8 +39,9 @@ namespace IntexNorthwestLabs.Controllers
         }
 
         // GET: Users/Create
-        public ActionResult Create()
+        public ActionResult Create(int? iCode)
         {
+            ViewBag.code = iCode;
             return View();
         }
 
@@ -54,6 +55,7 @@ namespace IntexNorthwestLabs.Controllers
             if (ModelState.IsValid)
             {
                 user.CustomerCode = iCode;
+                
                 db.User.Add(user);
                 db.SaveChanges();
                 //return RedirectToAction("CreateLogIn", new { iCode = user.CustomerCode });
