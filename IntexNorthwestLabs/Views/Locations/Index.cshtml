@@ -75,17 +75,17 @@
 <h2>About Northwest Labs</h2><br />
 
 
-<h3>Our Company</h3><br />
+<h3>Our Company</h3>
 <p>
     Northwest Labs specializes in assays concerning compounds and pharmaceuticals. They have existed for the past
     17 years. We provide reliable and independent results that allow companies to meet government regulations
     and test effectiveness.
-</p><br /><br />
+</p><br />
 
 <h3>Our Company Mission</h3><br />
 <p>We wish to be the best possible independent assay testers</p><br /><br />
-
-<h2>Our Offices</h2><br />
+                                                                      <hr />
+<h2>Our Offices</h2>
 
 
 @foreach (var item in Model)
@@ -94,12 +94,10 @@
     @Html.DisplayFor(modelItem => item.LocationCode)
     <br />-->
     <h3> @Html.DisplayFor(modelItem => item.LocationName) @ViewBag.space @Html.DisplayNameFor(model => model.LocationName)</h3>
-    <br />
-
-    @Html.DisplayFor(modelItem => item.LocationAddress)
-    <br />
+        @Html.DisplayFor(modelItem => item.LocationAddress)
+    
         @Html.DisplayFor(modelItem => item.LocationAddress2)
-     <br />
+    <br />
     @Html.DisplayFor(modelItem => item.LocationCity)
     @ViewBag.space
     @Html.DisplayFor(modelItem => item.LocationState)
@@ -108,7 +106,8 @@
     <br />
     @Html.DisplayFor(modelItem => item.LocationCountry)
 
-    <br /><hr /><br />
+    <br />
 }
+    <br /><br />
 
 <!--@Html.ActionLink("Back to Home","Index","Home")-->
