@@ -93,7 +93,7 @@ namespace IntexNorthwestLabs.Controllers
         }
 
         [HttpPost]
-        public ActionResult RequestQuote(string username, string email, string message)
+        public ActionResult RequestQuote(string assay, string compound, string weight)
         {
             try
             {
@@ -102,8 +102,8 @@ namespace IntexNorthwestLabs.Controllers
                     var senderEmail = new MailAddress("intexNorthwestLabs@gmail.com", "Northwest Labs");
                     var receiverEmail = new MailAddress("intexNorthwestLabs@gmail.com", "Northwest Labs");
                     var password = "DreamTeam2-3";
-                    var sub = "Quote Request for user " + username;
-                    var body = message;
+                    var sub = "Quote Request";
+                    var body = assay + " for " + compound + ", which weights " + weight;
 
                     var smtp = new SmtpClient
                     {
@@ -116,12 +116,10 @@ namespace IntexNorthwestLabs.Controllers
                     };
                     using (var mess = new MailMessage(senderEmail, receiverEmail)
                     {
-                        Subject = "Quote Request for user " + username,
-                        Body = "Requester: " + username + "\n" +
-                                "Email: " + email + "\n" +
-                                "Message: " + message + "\n"
+                        Subject = "Quote Request",
+                        Body = assay + " for " + compound + ", which weights " + weight
 
-                    })
+                })
                     {
                         smtp.Send(mess);
                     }
@@ -130,7 +128,7 @@ namespace IntexNorthwestLabs.Controllers
             }
             catch (Exception)
             {
-                ViewBag.Error = "Some Error";
+                ViewBag.Error = "Error, please try again";
             }
             return View();
         }
