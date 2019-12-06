@@ -13,9 +13,12 @@
 {
 
     <label for="inputUserName">User Name</label>
-    @Html.TextBox("User Name")
+    @Html.TextBox("User Name", null, new { @class = "form-control" })
+    <br />
     <label for="inputPassword">Password</label>
-    @Html.Password("Password")
-    <button type="submit">Login</button>
+    @Html.Password("Password", null, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-primary"  type="submit">Login</button>
+   
 }
 

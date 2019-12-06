@@ -3,161 +3,188 @@
 @{
     ViewBag.Title = "Customer Portal";
 }
+<br />
+<h2>Welcome to your <b>Customer Portal</b></h2>
 
-<h2>Customer Portal</h2>
-
+<br />
+<div >
+    <center>
+        <h4>How can we help you?</h4>
+        <a href="@Url.Action("CurrentOrders", "Orders",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) } )" class="w3-bar-item w3-button">View Current Orders</a>
+        <a href="@Url.Action("PendingApproval", "Test_Results",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) } )" class="w3-bar-item w3-button">Tests Pending Approval</a>
+        <a href="@Url.Action("Create", "Orders",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">Create an Order</a>
+        <a href="@Url.Action("PastOrders", "Orders",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">See All Past Orders</a>
+        <a href="@Url.Action("RequestQuote", "Home")" class="w3-bar-item w3-button">Request Assay Test Quote</a>
+        <a href="@Url.Action("ViewCurrentInvoices", "Invoices",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">View Current Invoices</a>
+        <a href="@Url.Action("Index", "Invoices",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">View All Invoice</a>
+        <a href="@Url.Action("Create", "Users", new { iCode = Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">Add Another User</a>
+        <a href="@Url.Action("ShowAllUsers", "Users", new { iCode = Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">See All Users</a>
+    </center>
+</div>
 <div>
-
+    <br />
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            Name
-        </dt>
+    <br />
+    <h4>Customer Information</h4>
+    @Html.DisplayFor(model => model.CustomerName) <br />
+    @Html.DisplayNameFor(model => model.CustomerCode): @Html.DisplayFor(model => model.CustomerCode) <br />
+    @Html.DisplayFor(model => model.CustomerAddress)    <br />
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerCode)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CustomerCode)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerAddress)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CustomerAddress)
-        </dd>
-        @{
-            if (Html.DisplayFor(model => model.CustomerAddress2) == null)
-            {
+    @{
+        if (Html.DisplayFor(model => model.CustomerAddress2) == null)
+        {
 
 
-                <dt> @Html.DisplayNameFor(model => model.CustomerAddress2) </dt>
 
-                <dd>
-                    @Html.DisplayFor(model => model.CustomerAddress2)
-                </dd>
-            }
+            @Html.DisplayFor(model => model.CustomerAddress2)
+            <br />
         }
+    }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerCity)
-        </dt>
+    @Html.DisplayFor(model => model.CustomerCity) ,  @Html.DisplayFor(model => model.CustomerState)  @Html.DisplayFor(model => model.CustomerPostalCode)<br />
+    @Html.DisplayFor(model => model.CustomerCountry)<br />
+    @Html.DisplayFor(model => model.CustomerEmail)<br />
+    Permission to run ALL tests: @Html.DisplayFor(model => model.AdditionalTestingApproval)<br />
+    @Html.DisplayNameFor(model => model.TotalAmountDue): $@Html.DisplayFor(model => model.TotalAmountDue)<br />
+    <hr />
+    <!--<dl class="dl-horizontal">-->
+    <!--  <dl>
+          <dt>
+              Name
+          </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerCity)
-        </dd>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerName)
+          </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerState)
-        </dt>
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerCode)
+          </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerState)
-        </dd>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerCode)
+          </dd>
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerAddress)
+          </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerPostalCode)
-        </dt>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerAddress)
+          </dd>
+          @{
+              if (Html.DisplayFor(model => model.CustomerAddress2) == null)
+              {
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerPostalCode)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerCountry)
-        </dt>
+                  <dt> @Html.DisplayNameFor(model => model.CustomerAddress2) </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerCountry)
-        </dd>
+                  <dd>
+                      @Html.DisplayFor(model => model.CustomerAddress2)
+                  </dd>
+              }
+          }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerEmail)
-        </dt>
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerCity)
+          </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerEmail)
-        </dd>
-        <!--
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerCreditCardNumber)
-        </dt>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerCity)
+          </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerCreditCardNumber)
-        </dd>
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerState)
+          </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerDiscount)
-        </dt>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerState)
+          </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerDiscount)
-        </dd>
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerPostalCode)
+          </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerComment)
-        </dt>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerPostalCode)
+          </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerComment)
-        </dd>
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerCountry)
+          </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerCreditCardExpiration)
-        </dt>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerCountry)
+          </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerCreditCardExpiration)
-        </dd>
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerEmail)
+          </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.CustomerCreditCardCVC)
-        </dt>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerEmail)
+          </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.CustomerCreditCardCVC)
-        </dd>
-            -->
-        <dt>
-            @Html.DisplayNameFor(model => model.AdditionalTestingApproval)
-            <!--  Permissions granted to run all required and conditional test on assays requested-->
-        </dt>
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerCreditCardNumber)
+          </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.AdditionalTestingApproval)
-        </dd>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerCreditCardNumber)
+          </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TotalAmountDue)
-        </dt>
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerDiscount)
+          </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TotalAmountDue)
-        </dd>
+          <dd>
+              @Html.DisplayFor(model => model.CustomerDiscount)
+          </dd>
+
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerComment)
+          </dt>
+
+          <dd>
+              @Html.DisplayFor(model => model.CustomerComment)
+          </dd>
+
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerCreditCardExpiration)
+          </dt>
+
+          <dd>
+              @Html.DisplayFor(model => model.CustomerCreditCardExpiration)
+          </dd>
+
+          <dt>
+              @Html.DisplayNameFor(model => model.CustomerCreditCardCVC)
+          </dt>
+
+          <dd>
+              @Html.DisplayFor(model => model.CustomerCreditCardCVC)
+          </dd>
+
+    <dt>
+         @Html.DisplayNameFor(model => model.AdditionalTestingApproval)
+        Permission to run ALL tests
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.AdditionalTestingApproval)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.TotalAmountDue)
+    </dt>
+
+    <dd>
+        $@Html.DisplayFor(model => model.TotalAmountDue)
+    </dd>
 
     </dl>
+    -->
 </div>
 
-
-
-
-<h3>How can we help you?</h3>
-<a href="@Url.Action("CurrentOrders", "Orders",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) } )" class="w3-bar-item w3-button">View Current Orders</a>
-<a href="@Url.Action("PendingApproval", "Test_Results",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) } )" class="w3-bar-item w3-button">Tests Pending Approval</a>
-<a href="@Url.Action("Create", "Orders",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">Create an Order</a>
-<a href="@Url.Action("PastOrders", "Orders",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">See All Past Orders</a>
-<a href="@Url.Action("RequestQuote", "Home")" class="w3-bar-item w3-button">Request Assay Test Quote</a>
-<a href="@Url.Action("ViewCurrentInvoices", "Invoices",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">View Current Invoices</a>
-<a href="@Url.Action("Index", "Invoices",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">View All Invoice</a>
-<a href="@Url.Action("Create", "Users", new { iCode = Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">Add Another User</a>
-<a href="@Url.Action("ShowAllUsers", "Users", new { iCode = Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">See All Users</a>
 
 
 

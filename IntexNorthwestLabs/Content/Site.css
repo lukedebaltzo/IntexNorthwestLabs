@@ -1,6 +1,9 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #eee !important;
+    font-family: 'Roboto', sans-serif !important;
+    margin-top: 20px !important;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -16,3 +19,28 @@ textarea {
     max-width: 280px;
 }
 
+
+a.w3-bar-item.w3-button {
+    background-color: #fff;
+    margin: 5px !important;
+    font-size: 1.65rem;
+}
+
+.w3-button:hover {
+    color: #000 !important;
+    background-color: #ccc !important;
+    text-decoration: none !important;
+}
+
+.w3-button:focus {
+    text-decoration: none !important;
+    color: #666666;
+}
+
+img {
+    margin: 5px;
+}
+
+hr {
+    border-top: 1px solid #ccc;
+}
