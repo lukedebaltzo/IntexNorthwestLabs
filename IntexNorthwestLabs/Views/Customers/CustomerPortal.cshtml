@@ -150,6 +150,7 @@
 
 <h3>How can we help you?</h3>
 <a href="@Url.Action("CurrentOrders", "Orders",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) } )" class="w3-bar-item w3-button">View Current Orders</a>
+<a href="@Url.Action("PendingApproval", "Test_Results",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) } )" class="w3-bar-item w3-button">Tests Pending Approval</a>
 <a href="@Url.Action("Create", "Orders",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">Create an Order</a>
 <a href="@Url.Action("PastOrders", "Orders",  new { iCode =  Html.DisplayFor(model => model.CustomerCode) })" class="w3-bar-item w3-button">See All Past Orders</a>
 <a href="@Url.Action("RequestQuote", "Home")" class="w3-bar-item w3-button">Request Assay Test Quote</a>

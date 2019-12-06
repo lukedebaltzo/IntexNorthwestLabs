@@ -126,5 +126,14 @@ namespace IntexNorthwestLabs.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult PendingApproval(int? iCode)
+        {
+
+            var obj = db.Test_Results.Where(x => x.CustomerCode == iCode && x.TestStatus == "Pending Additional Testing Approval");
+           
+
+            return View(obj.ToList());
+        }
     }
 }

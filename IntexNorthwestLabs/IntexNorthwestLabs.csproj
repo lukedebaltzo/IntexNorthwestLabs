@@ -295,6 +295,7 @@
     <Content Include="Views\Test_Results\Details.cshtml" />
     <Content Include="Views\Test_Results\Edit.cshtml" />
     <Content Include="Views\Test_Results\Index.cshtml" />
+    <Content Include="Views\Test_Results\PendingApproval.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
