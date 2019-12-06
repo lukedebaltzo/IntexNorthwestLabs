@@ -23,14 +23,17 @@ namespace IntexNorthwestLabs.Models
         public int OrderCode { get; set; }
 
         [Required]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Invoice Date")]
         public DateTime InvoiceDate { get; set; }
         
         [Required]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Due Date")]
         public DateTime InvoiceDueDate { get; set; }
 
         [Required]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Early Pay Date")]
         public DateTime InvoiceEarlyPayDate { get; set; }
 
