@@ -24,29 +24,23 @@
 <div>
     <br />
     <hr />
-    <br />
+
     <h4>Customer Information</h4>
     @Html.DisplayFor(model => model.CustomerName) <br />
     @Html.DisplayNameFor(model => model.CustomerCode): @Html.DisplayFor(model => model.CustomerCode) <br />
     @Html.DisplayFor(model => model.CustomerAddress)    <br />
-
     @{
         if (Html.DisplayFor(model => model.CustomerAddress2) == null)
         {
-
-
-
-            @Html.DisplayFor(model => model.CustomerAddress2)
-            <br />
+            @Html.DisplayFor(model => model.CustomerAddress2) <br />
         }
     }
-
-    @Html.DisplayFor(model => model.CustomerCity) ,  @Html.DisplayFor(model => model.CustomerState)  @Html.DisplayFor(model => model.CustomerPostalCode)<br />
+    @Html.DisplayFor(model => model.CustomerCity),  @Html.DisplayFor(model => model.CustomerState)  @Html.DisplayFor(model => model.CustomerPostalCode)<br />
     @Html.DisplayFor(model => model.CustomerCountry)<br />
     @Html.DisplayFor(model => model.CustomerEmail)<br />
     Permission to run ALL tests: @Html.DisplayFor(model => model.AdditionalTestingApproval)<br />
     @Html.DisplayNameFor(model => model.TotalAmountDue): $@Html.DisplayFor(model => model.TotalAmountDue)<br />
-    <hr />
+
     <!--<dl class="dl-horizontal">-->
     <!--  <dl>
           <dt>

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" sizes="96x96" href="~/Content/images/favicon-96x96.png">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
@@ -18,8 +19,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <img src="~/Content/images/NEW_NWlogo_white.png" style="max-height: 50px; margin: 5px;"  />
-                @Html.ActionLink("Northwest Labs", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                <!-- @Html.ActionLink("Northwest Labs", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })-->
+                <a href="@Url.Action("Index", "Home")"><img src="~/Content/images/NEW_NWlogo_white.png" style="max-height: 50px; margin: 5px;" /></a> |
+                @Html.ActionLink("About Us", "Index", "Location", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Contact Us", "SendEmail", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -32,7 +36,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Northwest Labs</p>
+            <p style="margin: 10px">&copy; @DateTime.Now.Year - Northwest Labs</p>
         </footer>
     </div>
 
