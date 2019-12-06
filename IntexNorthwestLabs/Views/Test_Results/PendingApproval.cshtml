@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<IntexNorthwestLabs.Models.Test_Results>
 
 @{
-    ViewBag.Title = "PendingApproval";
+    ViewBag.Title = "Tests Pending Approval";
 }
 
-<h2>PendingApproval</h2>
+<h2>Tests Pending Approval</h2>
 
-<p>
+<!--<p>
     @Html.ActionLink("Create New", "Create")
-</p>
+</p>-->
 <table class="table">
     <tr>
         <th>
@@ -32,38 +32,42 @@
         <th>
             @Html.DisplayNameFor(model => model.CustomerCode)
         </th>
-        <th></th>
+        <th>
+            Approval
+        </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.AssayName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CompoundName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestResultQuantitative)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TestResultQualitative)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CustomerCode)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssayName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompoundName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestResultQuantitative)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TestResultQualitative)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerCode)
+            </td>
+            <td>
+                @Html.RadioButton("Approve", "Edit", false)
+                <!--  @Html.ActionLink("Approve", "Edit", new { @class="btn" }) |
+                    @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                     @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })-->
+            </td>
+</tr>
+    }
 
 </table>

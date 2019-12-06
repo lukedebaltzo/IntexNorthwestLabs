@@ -130,7 +130,7 @@ namespace IntexNorthwestLabs.Controllers
         public ActionResult PendingApproval(int? iCode)
         {
 
-            var obj = db.Test_Results.Where(x => x.CustomerCode == iCode && x.TestStatus == "Pending Additional Testing Approval");
+            var obj = db.Test_Results.Where(x => x.CustomerCode == iCode && x.TestStatus == "Pending Approval");
            
 
             return View(obj.ToList());
